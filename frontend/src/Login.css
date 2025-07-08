@@ -28,6 +28,14 @@
   font-weight: 700;
 }
 
+/* Logo Styling (Reduced by 35%) */
+.login-logo {
+  width: 65%; /* 35% reduction from full size */
+  max-width: 130px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
 /* Login Form Styling */
 .login-form {
   display: flex;
@@ -42,20 +50,38 @@
 
 /* Input Fields (inherited from App.css, but can be customized here) */
 .login-form input {
-  /* Specific styling for login inputs if different from global */
-  /* For now, relying on App.css for input styles */
+  /* Customize input if needed */
 }
 
 /* Error Message (inherited from App.css) */
 .login-card .error-message {
   margin-top: 15px;
   margin-bottom: 0; /* Adjust margin if needed */
+  color: red;
+  font-size: 0.9rem;
 }
 
-/* Login Button (inherited from App.css) */
+/* Login Button */
 .login-button {
   width: 100%; /* Full width button */
   margin-top: 20px; /* Space above button */
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:disabled {
+  background-color: #8ba3c7;
+  cursor: not-allowed;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #001f52;
 }
 
 /* Register Link */

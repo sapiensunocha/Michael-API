@@ -1,0 +1,210 @@
+/* Pricing Page Container */
+.pricing-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Pricing Header */
+.pricing-header {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pricing-header h2 {
+  color: #003087;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.pricing-header p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Back to Dashboard Button */
+.back-to-dashboard-button {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-dashboard-button:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+/* Plans Grid */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+/* Plan Card */
+.plan-card, .payment-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover, .payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card h3, .payment-card h3 {
+  color: #003087;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.plan-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #c8102e;
+  margin-bottom: 20px;
+}
+
+.plan-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* Feature List */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.plan-features li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.plan-features li::before {
+  content: '✔';
+  color: #28a745;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Subscribe Button */
+.subscribe-button {
+  background-color: #003087;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #00215e;
+  transform: translateY(-2px);
+}
+
+/* Current Plan Button */
+.current-plan-button {
+  background-color: #28a745;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+.current-plan-button:hover {
+  background-color: #28a745;
+}
+
+/* Message Styles */
+.loading-message,
+.error-message,
+.no-plans-message {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .plans-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-page-container {
+    padding: 30px 15px;
+  }
+
+  .pricing-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .plan-card, .payment-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-page-container {
+    padding: 20px 10px;
+  }
+
+  .pricing-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .pricing-header p {
+    font-size: 1rem;
+  }
+}

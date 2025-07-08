@@ -1,0 +1,78 @@
+/* Payment Component Container */
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* No min-height here as it's a component, not a full page */
+  padding: 10px; /* Small padding around the card */
+  box-sizing: border-box;
+}
+
+/* Payment Card Styling */
+.payment-card {
+  background-color: #ffffff; /* White card background */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow for a component */
+  width: 100%;
+  max-width: 300px; /* Max width for the payment card */
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.payment-card h3 {
+  color: #003087; /* UN blue for heading */
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.payment-card .plan-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #c8102e; /* OCHA Red for price */
+  margin-bottom: 20px;
+}
+
+/* Error Message (inherited from App.css, but can be customized here) */
+.payment-card .error-message {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+/* Subscribe Button (inherited from App.css) */
+.subscribe-button {
+  width: 100%; /* Full width button */
+  margin-top: 20px;
+}
+
+/* Login Prompt */
+.login-prompt {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .payment-card {
+    padding: 20px;
+  }
+
+  .payment-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .payment-card .plan-price {
+    font-size: 1.6rem;
+  }
+
+  .subscribe-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

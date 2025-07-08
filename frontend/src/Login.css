@@ -1,0 +1,97 @@
+/* Login Page Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #f5f7fa; /* Light grey background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Login Card Styling */
+.login-card {
+  background-color: #ffffff; /* White card background */
+  padding: 40px;
+  border-radius: 12px; /* More rounded corners for a softer look */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  width: 100%;
+  max-width: 400px; /* Max width for the card */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-card h2 {
+  color: #003087; /* UN blue for heading */
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Login Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form groups */
+}
+
+/* Form Group (inherited from App.css, but can be customized here) */
+.login-form .form-group {
+  margin-bottom: 0; /* Override default margin from App.css if needed */
+}
+
+/* Input Fields (inherited from App.css, but can be customized here) */
+.login-form input {
+  /* Specific styling for login inputs if different from global */
+  /* For now, relying on App.css for input styles */
+}
+
+/* Error Message (inherited from App.css) */
+.login-card .error-message {
+  margin-top: 15px;
+  margin-bottom: 0; /* Adjust margin if needed */
+}
+
+/* Login Button (inherited from App.css) */
+.login-button {
+  width: 100%; /* Full width button */
+  margin-top: 20px; /* Space above button */
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.register-link span {
+  color: #003087; /* UN blue for clickable link */
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none; /* No underline by default */
+  transition: color 0.2s ease;
+}
+
+.register-link span:hover {
+  color: #001f52; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 25px;
+    margin: 0 15px; /* Add horizontal margin on small screens */
+  }
+
+  .login-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  .login-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

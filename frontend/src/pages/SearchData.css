@@ -1,0 +1,219 @@
+/* frontend/src/pages/SearchData.css */
+
+/* Inherits most styles from Dashboard.css for consistency */
+
+.search-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--grey-light), var(--grey-medium));
+}
+
+.search-content {
+  flex-grow: 1;
+  padding: 40px;
+  max-width: 1300px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.search-header-section {
+  text-align: center;
+  background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Light blue-green gradient */
+  color: #00796b; /* Dark teal */
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid #80deea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.search-header-icon {
+  color: #00796b;
+  margin-bottom: 20px;
+  font-size: 65px;
+}
+
+.search-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: #00796b;
+  line-height: 1.1;
+}
+
+.search-subtitle {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-weight: 500;
+}
+
+/* Search Form Section */
+.search-form-section {
+  /* Inherits card styles */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input-group {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden; /* Ensures inner elements respect border-radius */
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  border-right: 1px solid var(--grey-medium);
+  background-color: #fcfdff;
+  color: var(--text-dark);
+}
+
+.search-input::placeholder {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.search-submit-button {
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--un-blue-dark);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-submit-button:hover {
+  background-color: var(--un-blue-medium);
+  transform: translateY(0); /* No vertical transform */
+  box-shadow: none; /* No extra shadow on hover for this button */
+}
+
+.search-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Search Results Section */
+.search-results-section {
+  /* Inherits card styles */
+  min-height: 200px; /* Give some space for results */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-results-message {
+  color: var(--text-light);
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .search-content {
+    max-width: 1100px;
+    padding: 30px;
+  }
+  .search-title {
+    font-size: 3.2rem;
+  }
+  .search-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-content {
+    padding: 25px;
+    gap: 30px;
+  }
+  .search-title {
+    font-size: 2.8rem;
+  }
+  .search-subtitle {
+    font-size: 1.1rem;
+  }
+  .search-header-section {
+    padding: 40px;
+  }
+  .search-input-group {
+    flex-direction: column; /* Stack input and button */
+    border-radius: 12px;
+    box-shadow: none;
+  }
+  .search-input {
+    border-right: none;
+    border-bottom: 1px solid var(--grey-medium);
+    border-radius: 12px 12px 0 0;
+  }
+  .search-submit-button {
+    border-radius: 0 0 12px 12px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-content {
+    padding: 20px;
+    gap: 25px;
+  }
+  .search-header-section {
+    padding: 30px;
+  }
+  .search-title {
+    font-size: 2.5rem;
+  }
+  .search-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-header-section {
+    padding: 25px;
+  }
+  .search-title {
+    font-size: 2rem;
+  }
+  .search-subtitle {
+    font-size: 0.9rem;
+  }
+  .search-input {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+  .search-submit-button {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+}

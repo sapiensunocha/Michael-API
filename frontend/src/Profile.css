@@ -1,0 +1,305 @@
+/* frontend/src/pages/Profile.css */
+
+/* Inherits most styles from Dashboard.css for consistency */
+
+/* Profile Page Container */
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--grey-light), var(--grey-medium)); /* Consistent with dashboard */
+}
+
+/* Profile Content Area */
+.profile-content {
+  flex-grow: 1;
+  padding: 40px;
+  max-width: 1300px; /* Wider content area consistent with dashboard */
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* Consistent spacing */
+  animation: fadeIn 0.8s ease-out; /* Fade in content */
+}
+
+/* Profile Header Section */
+.profile-header-section {
+  text-align: center;
+  background: linear-gradient(to right, var(--un-blue-light), #cceeff);
+  color: var(--un-blue-dark);
+  padding: 50px; /* More generous padding */
+  border-radius: 25px; /* More rounded */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid #b3e0ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header-icon {
+  color: var(--un-blue-dark);
+  margin-bottom: 20px;
+  font-size: 65px; /* Slightly larger icon */
+}
+
+.profile-title {
+  font-size: 3.8rem; /* Larger, more impactful title */
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: var(--un-blue-dark);
+  line-height: 1.1;
+}
+
+.profile-subtitle {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* Profile Details Grid */
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width for cards */
+  gap: 30px;
+}
+
+/* Individual Profile Card */
+.profile-card {
+  background-color: #ffffff;
+  padding: 35px; /* Increased padding */
+  border-radius: 20px; /* More rounded */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--grey-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card-title {
+  color: var(--un-blue-dark);
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--grey-medium);
+  padding-bottom: 15px;
+}
+
+.profile-card p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: var(--text-medium);
+}
+
+.profile-card p strong {
+  color: var(--un-blue-dark);
+  margin-right: 5px;
+  font-weight: 700;
+}
+
+.profile-value {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Plan and Status Specific Styling */
+.profile-value.plan-name.status-premium,
+.profile-value.plan-name.status-enterprise {
+  color: #28a745; /* Green for premium/enterprise */
+  font-weight: 700;
+}
+
+.profile-value.plan-name.status-basic {
+  color: #ffc107; /* Orange for basic */
+  font-weight: 700;
+}
+
+.profile-value.status-active {
+  color: #28a745; /* Green */
+  font-weight: 700;
+}
+
+.profile-value.status-inactive,
+.profile-value.status-cancelled {
+  color: var(--ocha-red); /* Red */
+  font-weight: 700;
+}
+
+/* API Key Card Specifics */
+.api-key-card {
+  /* No specific background, uses default profile-card */
+}
+
+.api-key-display {
+  background-color: #e9ecef;
+  padding: 20px; /* More padding */
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid #d0d7e0;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  word-break: break-all; /* Ensure key wraps */
+}
+
+.api-key-label {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.api-key-value {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--un-blue-dark);
+  background-color: #dbe9f5;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 700;
+}
+
+.api-key-note {
+  font-size: 0.85rem;
+  color: var(--ocha-red);
+  margin-top: 15px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.api-key-upgrade-message {
+  font-size: 1rem;
+  color: var(--ocha-red);
+  font-style: italic;
+  padding: 20px;
+  background-color: #fef2f2;
+  border-left: 5px solid var(--ocha-red);
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Buttons within cards (inherits from Dashboard.css .card-button and .primary-button/.secondary-button) */
+.profile-card-button {
+  margin-top: auto; /* Pushes button to bottom of card */
+  align-self: flex-start; /* Aligns button to the left */
+}
+
+/* No data messages */
+.no-profile-message {
+  color: var(--text-light);
+  font-style: italic;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--grey-medium);
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Responsive Adjustments (consistent with Dashboard.css) */
+@media (max-width: 1200px) {
+  .profile-content {
+    max-width: 1100px;
+    padding: 30px;
+  }
+  .profile-title {
+    font-size: 3.2rem;
+  }
+  .profile-subtitle {
+    font-size: 1.2rem;
+  }
+  .profile-details-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .profile-card-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile-content {
+    padding: 25px;
+    gap: 30px;
+  }
+  .profile-title {
+    font-size: 2.8rem;
+  }
+  .profile-subtitle {
+    font-size: 1.1rem;
+  }
+  .profile-card-title {
+    font-size: 1.6rem;
+  }
+  .profile-card {
+    padding: 30px;
+  }
+  .api-key-display, .api-key-upgrade-message {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    padding: 20px;
+    gap: 25px;
+  }
+  .profile-header-section {
+    padding: 40px;
+  }
+  .profile-title {
+    font-size: 2.5rem;
+  }
+  .profile-subtitle {
+    font-size: 1rem;
+  }
+  .profile-details-grid {
+    grid-template-columns: 1fr; /* Stack cards on small screens */
+  }
+  .profile-card {
+    padding: 25px;
+  }
+  .profile-card-title {
+    font-size: 1.4rem;
+  }
+  .profile-card p {
+    font-size: 0.95rem;
+  }
+  .profile-card-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header-section {
+    padding: 30px;
+  }
+  .profile-title {
+    font-size: 2rem;
+  }
+  .profile-subtitle {
+    font-size: 0.9rem;
+  }
+  .profile-card {
+    padding: 20px;
+  }
+  .profile-card-title {
+    font-size: 1.2rem;
+  }
+  .api-key-value {
+    font-size: 0.8rem;
+  }
+  .api-key-note, .api-key-upgrade-message {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,96 @@
+/* Register Page Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #f5f7fa; /* Light grey background, consistent with login */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Register Card Styling */
+.register-card {
+  background-color: #ffffff; /* White card background */
+  padding: 40px;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+  width: 100%;
+  max-width: 450px; /* Slightly wider than login for more fields */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.register-card h2 {
+  color: #003087; /* UN blue for heading */
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Register Form Styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form groups */
+}
+
+/* Form Group (inherited from App.css) */
+.register-form .form-group {
+  margin-bottom: 0; /* Override default margin from App.css if needed */
+}
+
+/* Input Fields (inherited from App.css) */
+.register-form input {
+  /* Specific styling for register inputs if different from global */
+}
+
+/* Error Message (inherited from App.css) */
+.register-card .error-message {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* Register Button (inherited from App.css) */
+.register-button {
+  width: 100%; /* Full width button */
+  margin-top: 20px; /* Space above button */
+}
+
+/* Login Link */
+.login-link {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.login-link span {
+  color: #003087; /* UN blue for clickable link */
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-link span:hover {
+  color: #001f52; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 25px;
+    margin: 0 15px;
+  }
+
+  .register-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  .register-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

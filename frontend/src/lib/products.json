@@ -1,0 +1,34 @@
+[
+  {
+    "id": "free_plan",
+    "name": "Free Plan",
+    "stripe_product_id": "prod_ScISIEEy3qEsq5",
+    "stripe_price_id": "price_1Rh3rcDV4GGUfngR2xmNxAtm",
+    "price": 0,
+    "features": ["Basic Access", "Limited Usage"]
+  },
+  {
+    "id": "basic_plan",
+    "name": "Basic Plan",
+    "stripe_product_id": "prod_ScIVBs1DuydOlJ",
+    "stripe_price_id": "price_1Rh3uCDV4GGUfngR1sebvGsU",
+    "price": 29,
+    "features": ["Access to dashboard", "Support", "5 Alerts per month"]
+  },
+  {
+    "id": "pro_plan",
+    "name": "Pro Plan",
+    "stripe_product_id": "prod_ScIXMEsdFs4Tpz",
+    "stripe_price_id": "price_1Rh3wiDV4GGUfngRBHMdayhz",
+    "price": 99,
+    "features": ["Unlimited Access", "Priority Support", "Unlimited Alerts"]
+  },
+  {
+    "id": "enterprise_plan",
+    "name": "Enterprise Plan",
+    "stripe_product_id": "prod_ScIdhu3ZcYEWIw",
+    "stripe_price_id": "price_1Rh421DV4GGUfngR2IdV2Doh",
+    "price": 0,
+    "features": ["Custom Onboarding", "Dedicated Support", "Custom Alerts"]
+  }
+]

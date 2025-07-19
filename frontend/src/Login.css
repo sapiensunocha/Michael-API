@@ -1,0 +1,167 @@
+/* Login Page Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #f5f7fa; /* Light grey background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Login Card Styling */
+.login-card {
+  background-color: #ffffff; /* White card background */
+  padding: 40px;
+  border-radius: 12px; /* More rounded corners for a softer look */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  width: 100%;
+  max-width: 400px; /* Max width for the card */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-card h2 {
+  color: #003087; /* UN blue for heading */
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Logo Styling (Reduced by 35%) */
+.login-logo {
+  width: 65%; /* 35% reduction from full size */
+  max-width: 130px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Login Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form groups */
+}
+
+/* Form Group (inherited from App.css, but can be customized here) */
+.login-form .form-group {
+  margin-bottom: 0; /* Override default margin from App.css if needed */
+}
+
+/* Input Fields (inherited from App.css, but can be customized here) */
+.login-form input {
+  /* Customize input if needed */
+}
+
+/* Error Message (inherited from App.css) */
+.login-card .error-message {
+  margin-top: 15px;
+  margin-bottom: 0; /* Adjust margin if needed */
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%; /* Full width button */
+  margin-top: 20px; /* Space above button */
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:disabled {
+  background-color: #8ba3c7;
+  cursor: not-allowed;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #001f52;
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.register-link span {
+  color: #003087; /* UN blue for clickable link */
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none; /* No underline by default */
+  transition: color 0.2s ease;
+}
+
+.register-link span:hover {
+  color: #001f52; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* NEW: Forgot Password Link Styling */
+.forgot-password-link {
+  margin-top: 10px; /* Add some space above it */
+  text-align: center; /* Center the link */
+  font-size: 0.95rem; /* Consistent with register link */
+  color: #555; /* Consistent with register link */
+}
+
+.forgot-password-link span {
+  color: #003087; /* UN blue for clickable link */
+  cursor: pointer; /* Changes mouse cursor to a pointer on hover */
+  font-weight: 600; /* Bold for emphasis */
+  text-decoration: none; /* No underline by default */
+  transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.forgot-password-link span:hover {
+  color: #001f52; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* NEW: Styles for success/error messages in ForgotPassword.jsx */
+.success-message {
+  color: #28a745; /* Green for success */
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #dc3545; /* Red for error */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 25px;
+    margin: 0 15px; /* Add horizontal margin on small screens */
+  }
+
+  .login-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  .login-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

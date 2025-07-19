@@ -1,0 +1,190 @@
+/* PricingPage.css - Updated for consistent header/footer and improved pricing table */
+
+/* REMOVE OR COMMENT OUT THIS SECTION */
+/*
+.pricing-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: #343a40;
+  background-color: #f8f9fa;
+}
+*/
+/* The top-level container is now '.dashboard-container' from Dashboard.css */
+
+/* General Body Styling (Keep this if you want these global styles for fonts/background) */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Ensure this font is imported in public/index.html */
+  background-color: #f8f9fa; /* Very light, soft background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Styling for the main content area of the Pricing Page */
+.pricing-main-content {
+  flex-grow: 1; /* Allows it to take up available vertical space between header and footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px; /* Add padding specific to the main content */
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box;
+}
+
+/* Pricing Header (for "Choose Your Plan" section) */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 60px; /* Generous space below header */
+  max-width: 900px;
+  position: relative;
+  color: #343a40; /* Darker text for good contrast */
+}
+
+.pricing-header h2 {
+  font-size: 3.8em; /* Larger, more striking heading */
+  font-weight: 700;
+  color: #2c3e50; /* A deep, professional blue-gray */
+  margin-bottom: 20px;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.pricing-header p {
+  font-size: 1.3em; /* Larger, more readable paragraph */
+  color: #6c757d; /* Softer gray for description */
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* REMOVE OR COMMENT OUT THIS SECTION AS THE BUTTON IS NOW IN THE COPIED HEADER */
+/*
+.back-to-dashboard-button {
+  display: none; // This will hide it if the element is still in the DOM
+  // Or simply remove these styles entirely if you've deleted the HTML button
+}
+*/
+
+/* --- Stripe Pricing Table Wrapper Styling --- */
+/* THIS IS THE CRITICAL SECTION FOR HORIZONTAL ALIGNMENT */
+.stripe-table-wrapper {
+  display: flex; /* Enable flexbox for its direct children */
+  justify-content: center; /* Center the Stripe table */
+  align-items: flex-start; /* Align to the top */
+  width: 100%; /* Take full width of its parent */
+  max-width: 1300px; /* Give it ample max-width to spread out */
+  margin: 0 auto; /* Center the wrapper on the page */
+  padding: 0 15px; /* Some horizontal padding */
+  box-sizing: border-box;
+  overflow-x: auto; /* ALLOW HORIZONTAL SCROLLING IF NECESSARY */
+  -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+  /* Remove gap here, as stripe-pricing-table manages internal spacing */
+}
+
+stripe-pricing-table {
+  /* This is crucial: Set a MINIMUM WIDTH that accommodates all 4 cards side-by-side */
+  /* Each Stripe card is roughly 250-280px wide. For 4 cards, (4 * 280px) + (3 * 20px gap) = ~1180px. */
+  /* We'll set it a bit larger to ensure ample spacing. */
+  min-width: 1180px; /* ADJUST THIS VALUE BASED ON YOUR EXACT CARD WIDTHS */
+  width: 100%; /* Flexible within its min/max constraints */
+  max-width: 1300px; /* Max width to prevent it from becoming excessively wide */
+  margin: 0 auto; /* Center the component itself within its wrapper */
+  display: block; /* Important for min-width to work correctly */
+}
+
+/*
+  IMPORTANT: The internal appearance of the Stripe cards (background, specific font sizes,
+  button colors, etc.) MUST be changed in your Stripe Dashboard's "Display settings"
+  for that pricing table. The CSS above controls the layout/spacing of the
+  <stripe-pricing-table> element, not its internal content's look.
+*/
+
+
+/* --- Responsive Adjustments --- */
+
+/* For smaller desktops / large tablets, allow some flexibility */
+@media (max-width: 1200px) {
+  .stripe-table-wrapper {
+    max-width: 1000px;
+  }
+  stripe-pricing-table {
+    min-width: 900px; /* Slightly reduce min-width, but still encourage horizontal */
+  }
+}
+
+/* For tablets and smaller laptops */
+@media (max-width: 992px) {
+  .pricing-main-content {
+    padding: 30px 15px; /* Adjust padding for smaller screens */
+  }
+  .pricing-header h2 {
+    font-size: 3em;
+  }
+  .pricing-header p {
+    font-size: 1.1em;
+  }
+  /* On tablets, we still want horizontal with scroll if needed */
+  stripe-pricing-table {
+    min-width: 900px; /* Keep strict horizontal, rely on overflow-x */
+  }
+}
+
+/* For mobile devices - this is where we allow it to stack for readability */
+@media (max-width: 768px) {
+  .pricing-main-content {
+    padding: 20px 10px; /* Adjust padding for mobile */
+  }
+  .pricing-header h2 {
+    font-size: 2.5em;
+  }
+  .pricing-header p {
+    font-size: 1em;
+  }
+
+  /* Forcing stacking on smaller mobile devices */
+  .stripe-table-wrapper {
+    flex-direction: column; /* Force vertical stacking of the entire table */
+    align-items: center; /* Center the stacked table */
+    overflow-x: hidden; /* No horizontal scroll when stacked */
+  }
+  stripe-pricing-table {
+    min-width: unset; /* Remove min-width constraint to allow it to shrink */
+    max-width: 400px; /* Limit max width of the stacked table for better readability */
+    width: 100%; /* Take full available width of its container */
+    margin: 20px 0; /* Add vertical space between the table and other elements when stacked */
+  }
+}
+
+/* Custom plan/payment card styles (if still used for other components) */
+/* These styles will NOT affect Stripe's embedded table */
+.plan-card, .payment-card {
+  /* ... your existing custom styles ... */
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover, .payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card h3, .payment-card h3 {
+  color: #003087;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+/* ... etc for other custom plan/payment card elements ... */

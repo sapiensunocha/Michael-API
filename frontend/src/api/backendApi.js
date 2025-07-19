@@ -204,7 +204,8 @@ export const getGlobalDashboardData = async () => {
       .from('alerts')
       .select('id, event_type, severity_level, alert_message, start_time, latitude, longitude, location_name, source, country, city')
       .or('end_time.is.null,end_time.gte.now()') // Alerts that haven't ended or end in the future
-      .order('start_time', { ascending: false }); // Most recent alerts first
+      // CORRECTED LINE: Ordering by 'created_at' for more consistent results across all data sources
+      .order('created_at', { ascending: false });
 
     if (error) {
       console.error('Supabase Global Dashboard Data Fetch Error:', error);
